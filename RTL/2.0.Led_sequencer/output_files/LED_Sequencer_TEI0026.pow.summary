@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Mon Jan 24 23:37:49 2022
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : LED_Sequencer_TEI0026
+Top-level Entity Name : top
+Family : MAX 10
+Device : 10M08SAU169C8G
+Power Models : Final
+Total Thermal Power Dissipation : 124.95 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 110.66 mW
+I/O Thermal Power Dissipation : 14.29 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

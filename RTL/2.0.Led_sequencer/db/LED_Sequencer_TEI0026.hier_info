@@ -1,0 +1,348 @@
+|top
+CLK_X => clock_div:C0.clock_in
+CLK_X => clock_div:C1.clock_in
+CLK_X => differentiator:DIFF0.clock
+CLK_X => differentiator:DIFF1.clock
+CLK_X => S1:LED_S1.clock
+CLK_X => S2:LED_S2.clock
+CLK_X => S3:LED_S3.clock
+CLK_X => S4:LED_S4.clock
+CLK_X => pwm_gen:PWM_GEN0.clock
+CLK_X => pwm_gen:PWM_GEN1.clock
+USER_BTN => control:Control0.USER_BTN
+LED[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+LED[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+LED[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+LED[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+LED[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|clock_div:C0
+clock_in => cnt[0].CLK
+clock_in => cnt[1].CLK
+clock_in => cnt[2].CLK
+clock_in => cnt[3].CLK
+clock_in => cnt[4].CLK
+clock_in => cnt[5].CLK
+clock_in => cnt[6].CLK
+clock_in => cnt[7].CLK
+clock_in => cnt[8].CLK
+clock_in => cnt[9].CLK
+clock_in => cnt[10].CLK
+clock_in => cnt[11].CLK
+clock_in => cnt[12].CLK
+clock_in => cnt[13].CLK
+clock_in => cnt[14].CLK
+clock_in => cnt[15].CLK
+clock_in => cnt[16].CLK
+clock_in => cnt[17].CLK
+clock_in => cnt[18].CLK
+clock_in => cnt[19].CLK
+reset => cnt[0].ACLR
+reset => cnt[1].ACLR
+reset => cnt[2].ACLR
+reset => cnt[3].ACLR
+reset => cnt[4].ACLR
+reset => cnt[5].ACLR
+reset => cnt[6].ACLR
+reset => cnt[7].ACLR
+reset => cnt[8].ACLR
+reset => cnt[9].ACLR
+reset => cnt[10].ACLR
+reset => cnt[11].ACLR
+reset => cnt[12].ACLR
+reset => cnt[13].ACLR
+reset => cnt[14].ACLR
+reset => cnt[15].ACLR
+reset => cnt[16].ACLR
+reset => cnt[17].ACLR
+reset => cnt[18].ACLR
+reset => cnt[19].ACLR
+clock_out <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|clock_div:C1
+clock_in => cnt[0].CLK
+clock_in => cnt[1].CLK
+clock_in => cnt[2].CLK
+clock_in => cnt[3].CLK
+clock_in => cnt[4].CLK
+clock_in => cnt[5].CLK
+clock_in => cnt[6].CLK
+clock_in => cnt[7].CLK
+clock_in => cnt[8].CLK
+clock_in => cnt[9].CLK
+clock_in => cnt[10].CLK
+clock_in => cnt[11].CLK
+clock_in => cnt[12].CLK
+clock_in => cnt[13].CLK
+reset => cnt[0].ACLR
+reset => cnt[1].ACLR
+reset => cnt[2].ACLR
+reset => cnt[3].ACLR
+reset => cnt[4].ACLR
+reset => cnt[5].ACLR
+reset => cnt[6].ACLR
+reset => cnt[7].ACLR
+reset => cnt[8].ACLR
+reset => cnt[9].ACLR
+reset => cnt[10].ACLR
+reset => cnt[11].ACLR
+reset => cnt[12].ACLR
+reset => cnt[13].ACLR
+clock_out <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|differentiator:DIFF0
+clock => en.CLK
+reset_n => en.ACLR
+data => enable.IN1
+data => en.DATAIN
+enable <= enable.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|differentiator:DIFF1
+clock => en.CLK
+reset_n => en.ACLR
+data => enable.IN1
+data => en.DATAIN
+enable <= enable.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|control:Control0
+clock => delay3.CLK
+clock => delay2.CLK
+clock => delay1.CLK
+reset_n => cnt[0].ACLR
+reset_n => cnt[1].ACLR
+reset_n => delay3.ACLR
+reset_n => delay2.ACLR
+reset_n => delay1.ACLR
+USER_BTN => delay1.DATAIN
+mode[0] <= cnt[0].DB_MAX_OUTPUT_PORT_TYPE
+mode[1] <= cnt[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|S1:LED_S1
+mode[0] => Equal0.IN5
+mode[0] => Equal1.IN3
+mode[1] => Equal0.IN4
+mode[1] => Equal1.IN2
+enable => count[3].ENA
+enable => count[2].ENA
+enable => count[1].ENA
+enable => count[0].ENA
+clock => count[0].CLK
+clock => count[1].CLK
+clock => count[2].CLK
+clock => count[3].CLK
+reset_n => process_0.IN1
+LED[0] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[4] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[5] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[6] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[7] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|S2:LED_S2
+mode[0] => Equal0.IN3
+mode[1] => Equal0.IN2
+enable => shift_reg[7].ENA
+enable => shift_reg[6].ENA
+enable => shift_reg[5].ENA
+enable => shift_reg[4].ENA
+enable => shift_reg[3].ENA
+enable => shift_reg[2].ENA
+enable => shift_reg[1].ENA
+enable => shift_reg[0].ENA
+clock => shift_reg[0].CLK
+clock => shift_reg[1].CLK
+clock => shift_reg[2].CLK
+clock => shift_reg[3].CLK
+clock => shift_reg[4].CLK
+clock => shift_reg[5].CLK
+clock => shift_reg[6].CLK
+clock => shift_reg[7].CLK
+reset_n => process_0.IN1
+LED[0] <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= shift_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= shift_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= shift_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+LED[4] <= shift_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+LED[5] <= shift_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+LED[6] <= shift_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+LED[7] <= shift_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|S3:LED_S3
+mode[0] => Equal0.IN3
+mode[1] => Equal0.IN2
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+enable => cs.OUTPUTSELECT
+clock => cs~12.DATAIN
+reset_n => process_0.IN1
+pwm1 => LED.DATAA
+pwm1 => LED.DATAB
+pwm1 => Selector1.IN4
+pwm1 => Selector2.IN4
+pwm1 => Selector3.IN4
+pwm1 => Selector4.IN4
+pwm1 => Selector5.IN4
+pwm1 => Selector6.IN4
+pwm2 => LED.DATAA
+pwm2 => LED.DATAB
+LED[0] <= LED[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= LED[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= LED[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= LED[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[4] <= LED[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[5] <= LED[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[6] <= LED[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LED[7] <= LED[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|S4:LED_S4
+mode[0] => Equal0.IN3
+mode[1] => Equal0.IN2
+clock => pwm_out.CLK
+clock => cnt[0].CLK
+clock => cnt[1].CLK
+clock => cnt[2].CLK
+clock => cnt[3].CLK
+clock => cnt[4].CLK
+clock => cnt[5].CLK
+clock => cnt[6].CLK
+clock => cnt[7].CLK
+clock => cnt[8].CLK
+clock => cnt[9].CLK
+clock => cnt[10].CLK
+clock => pol.CLK
+clock => duty_cycle[0].CLK
+clock => duty_cycle[1].CLK
+clock => duty_cycle[2].CLK
+clock => duty_cycle[3].CLK
+clock => duty_cycle[4].CLK
+clock => duty_cycle[5].CLK
+clock => duty_cycle[6].CLK
+clock => duty_cycle[7].CLK
+clock => duty_cycle[8].CLK
+clock => duty_cycle[9].CLK
+clock => duty_cycle[10].CLK
+enable => pol.ENA
+enable => duty_cycle[0].ENA
+enable => duty_cycle[1].ENA
+enable => duty_cycle[2].ENA
+enable => duty_cycle[3].ENA
+enable => duty_cycle[4].ENA
+enable => duty_cycle[5].ENA
+enable => duty_cycle[6].ENA
+enable => duty_cycle[7].ENA
+enable => duty_cycle[8].ENA
+enable => duty_cycle[9].ENA
+enable => duty_cycle[10].ENA
+reset_n => ~NO_FANOUT~
+LED[0] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[4] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[5] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[6] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+LED[7] <= LED.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|pwm_gen:PWM_GEN0
+clock => pwm_out~reg0.CLK
+clock => count[0].CLK
+clock => count[1].CLK
+clock => count[2].CLK
+clock => count[3].CLK
+clock => count[4].CLK
+clock => count[5].CLK
+clock => count[6].CLK
+clock => count[7].CLK
+clock => count[8].CLK
+clock => count[9].CLK
+clock => count[10].CLK
+clock => count[11].CLK
+clock => count[12].CLK
+clock => count[13].CLK
+clock => count[14].CLK
+clock => count[15].CLK
+clock => count[16].CLK
+reset_n => pwm_out~reg0.ACLR
+reset_n => count[0].ACLR
+reset_n => count[1].ACLR
+reset_n => count[2].ACLR
+reset_n => count[3].ACLR
+reset_n => count[4].ACLR
+reset_n => count[5].ACLR
+reset_n => count[6].ACLR
+reset_n => count[7].ACLR
+reset_n => count[8].ACLR
+reset_n => count[9].ACLR
+reset_n => count[10].ACLR
+reset_n => count[11].ACLR
+reset_n => count[12].ACLR
+reset_n => count[13].ACLR
+reset_n => count[14].ACLR
+reset_n => count[15].ACLR
+reset_n => count[16].ACLR
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|pwm_gen:PWM_GEN1
+clock => pwm_out~reg0.CLK
+clock => count[0].CLK
+clock => count[1].CLK
+clock => count[2].CLK
+clock => count[3].CLK
+clock => count[4].CLK
+clock => count[5].CLK
+clock => count[6].CLK
+clock => count[7].CLK
+clock => count[8].CLK
+clock => count[9].CLK
+clock => count[10].CLK
+clock => count[11].CLK
+clock => count[12].CLK
+clock => count[13].CLK
+clock => count[14].CLK
+clock => count[15].CLK
+clock => count[16].CLK
+reset_n => pwm_out~reg0.ACLR
+reset_n => count[0].ACLR
+reset_n => count[1].ACLR
+reset_n => count[2].ACLR
+reset_n => count[3].ACLR
+reset_n => count[4].ACLR
+reset_n => count[5].ACLR
+reset_n => count[6].ACLR
+reset_n => count[7].ACLR
+reset_n => count[8].ACLR
+reset_n => count[9].ACLR
+reset_n => count[10].ACLR
+reset_n => count[11].ACLR
+reset_n => count[12].ACLR
+reset_n => count[13].ACLR
+reset_n => count[14].ACLR
+reset_n => count[15].ACLR
+reset_n => count[16].ACLR
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
