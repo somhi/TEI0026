@@ -2,6 +2,10 @@
 
 ![TEI0026](TEI0026.png)
 
+MAX10 Power Sequencer: Control 4 voltage rails via USB/PC and adjust on the fly from 0.8V to 3.3V, with up to 1A per rail. Perfect full automated voltage systems or laboratory, sequenced by MAX10. Includes a full PC controlled power demo, to Jump Start the board.
+
+At the moment of writting this board is not being sold neither by Arrow nor from Trenz electronics. I got one of them as a free of charge Arrow promotion board in the European "JUMP START" Program for FPGAs.
+
 ## Features
 
 - Altera MAX10 8kLE FPGA (10M08SAU169C8G) (same FPGA as [MAX1000](https://github.com/SoCFPGA-learning/Max1000))
