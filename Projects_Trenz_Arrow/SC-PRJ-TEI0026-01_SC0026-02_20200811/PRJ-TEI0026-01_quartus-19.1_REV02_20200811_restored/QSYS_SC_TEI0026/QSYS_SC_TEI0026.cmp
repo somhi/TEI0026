@@ -1,0 +1,15 @@
+	component QSYS_SC_TEI0026 is
+		port (
+			clk_in_clk              : in  std_logic                    := 'X';             -- clk
+			pio_in_dip_sw_export    : in  std_logic_vector(3 downto 0) := (others => 'X'); -- export
+			pio_in_usr_export       : in  std_logic_vector(2 downto 0) := (others => 'X'); -- export
+			pio_out_user_led_export : out std_logic_vector(3 downto 0);                    -- export
+			pio_out_vdd1_export     : out std_logic_vector(4 downto 0);                    -- export
+			pio_out_vdd2_export     : out std_logic_vector(5 downto 0);                    -- export
+			pio_out_vdd3_export     : out std_logic_vector(4 downto 0);                    -- export
+			reset_reset_n           : in  std_logic                    := 'X';             -- reset_n
+			uart_rxd                : in  std_logic                    := 'X';             -- rxd
+			uart_txd                : out std_logic                                        -- txd
+		);
+	end component QSYS_SC_TEI0026;
+
